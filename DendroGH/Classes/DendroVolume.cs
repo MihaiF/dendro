@@ -49,6 +49,9 @@ namespace DendroGH {
         static public extern void DendroIntersection (IntPtr grid, IntPtr csgGrid);
 
         [DllImport ("DendroAPI.dll", CallingConvention = CallingConvention.Cdecl)]
+        static public extern void DendroSmoothUnion (IntPtr grid, IntPtr csgGrid, float smooth);
+
+        [DllImport ("DendroAPI.dll", CallingConvention = CallingConvention.Cdecl)]
         static public extern void DendroOffset (IntPtr grid, double amount);
 
         [DllImport ("DendroAPI.dll", CallingConvention = CallingConvention.Cdecl)]
@@ -589,6 +592,27 @@ namespace DendroGH {
 
             // pinvoke union function
             DendroUnion (csg.Grid, vUnion.Grid);
+            csg.UpdateDisplay ();
+
+            return csg;
+        }
+
+        /// <summary>
+        /// compute a smoothed boolean union of a volume
+        /// </summary>
+        /// <param name="vUnion">volume to union</param>
+        /// <returns>new volume with the resulting union</returns>
+        public DendroVolume BooleanSmoothUnion (DendroVolume vUnion, float smooth) {
+            if (!this.IsValid)
+                return new DendroVolume ();
+
+            if (!vUnion.IsValid)
+                return new DendroVolume (this);
+
+            DendroVolume csg = new DendroVolume (this);
+
+            // pinvoke union function
+            DendroSmoothUnion (csg.Grid, vUnion.Grid, smooth);
             csg.UpdateDisplay ();
 
             return csg;
