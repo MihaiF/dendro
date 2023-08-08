@@ -77,6 +77,7 @@
     <Compile Include="Components\VolumeParam.cs" />
     <Compile Include="Components\VolumeSettings.cs" />
     <Compile Include="Components\VolumeSmooth.cs" />
+    <Compile Include="Components\VolumeSmoothUnion.cs" />
     <Compile Include="Components\VolumeToMesh.cs" />
     <Compile Include="Components\VolumeUnion.cs" />
     <Compile Include="Components\WriteFile.cs" />

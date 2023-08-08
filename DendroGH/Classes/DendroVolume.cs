@@ -641,6 +641,28 @@ namespace DendroGH {
         }
 
         /// <summary>
+        /// compute a boolean union of a set of volumes
+        /// </summary>
+        /// <param name="vUnion">list of volumes to union</param>
+        /// <returns>new volume with the resulting union</returns>
+        public DendroVolume BooleanSmoothUnion (List<DendroVolume> vUnion, float smooth) {
+            if (!this.IsValid)
+                return new DendroVolume ();
+
+            DendroVolume csg = new DendroVolume (this);
+
+            foreach (DendroVolume union in vUnion) {
+                // pinvoke union function
+                if (union.IsValid)
+                    DendroSmoothUnion (csg.Grid, union.Grid, smooth);
+            }
+
+            csg.UpdateDisplay ();
+
+            return csg;
+        }
+
+        /// <summary>
         /// apply an offset to the volume
         /// </summary>
         /// <param name="amount">amount to offset volume</param>
