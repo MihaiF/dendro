@@ -42,6 +42,8 @@ extern "C" {
 	extern DENDRO_API void DendroDifference(DendroGrid * grid, DendroGrid * csgGrid);
 	extern DENDRO_API void DendroIntersection(DendroGrid * grid, DendroGrid * csgGrid);
 
+	extern DENDRO_API void DendroSmoothUnion(DendroGrid* grid, DendroGrid* csgGrid, float smooth);
+
 	// volume filter methods
 	extern DENDRO_API void DendroOffset(DendroGrid * grid, double amount);
 	extern DENDRO_API void DendroOffsetMask(DendroGrid * grid, double amount, DendroGrid * mask, double min, double max, bool invert);

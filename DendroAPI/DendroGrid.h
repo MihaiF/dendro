@@ -30,6 +30,8 @@ public:
 	void BooleanIntersection(DendroGrid vIntersect);
 	void BooleanDifference(DendroGrid vSubtract);
 
+	void BooleanSmoothUnion(DendroGrid vAdd, float smooth);
+
 	void Offset(double amount);
 	void Offset(double amount, DendroGrid vMask, double min, double max, bool invert);
 

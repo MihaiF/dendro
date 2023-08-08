@@ -134,6 +134,39 @@ void DendroGrid::BooleanUnion(DendroGrid vAdd)
 	openvdb::tools::csgUnion(*mGrid, *cGrid, true);
 }
 
+void DendroGrid::BooleanSmoothUnion(DendroGrid vAdd, float smooth)
+{
+	auto csgGrid = vAdd.Grid();
+
+	// store current tranforms of both csg volumes
+	const openvdb::math::Transform
+		& sourceXform = csgGrid->transform(),
+		& targetXform = mGrid->transform();
+
+	// create a copy of the source grid for resampling
+	openvdb::FloatGrid::Ptr cGrid = openvdb::createLevelSet<openvdb::FloatGrid>(mGrid->voxelSize()[0]);
+	cGrid->transform() = mGrid->transform();
+
+	// compute a source grid to target grid transform
+	openvdb::Mat4R xform =
+		sourceXform.baseMap()->getAffineMap()->getMat4() *
+		targetXform.baseMap()->getAffineMap()->getMat4().inverse();
+
+	// create the transformer
+	openvdb::tools::GridTransformer transformer(xform);
+
+	// resample using trilinear interpolation 
+	transformer.transformGrid<openvdb::tools::BoxSampler, openvdb::FloatGrid>(*csgGrid, *cGrid);
+
+	// solve for the csg operation with result being stored in mGrid
+	mGrid->tree().combine(cGrid->tree(), [&](float a, float b, float& result)
+		{
+			const float k = smooth;
+			float h = std::max(k - fabs(a - b), 0.0f);
+			result = std::min(a, b) - h * h * 0.25f / k;
+		});
+}
+
 void DendroGrid::BooleanIntersection(DendroGrid vIntersect)
 {
 	auto csgGrid = vIntersect.Grid();
