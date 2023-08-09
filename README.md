@@ -1,3 +1,16 @@
+## Mihai's notes
+
+I changed the building process to use `vcpkg` for most of the dependencies. I left OpenVDB in the `dendro_libs` folder as the one coming from `vcpkg` isn't working at the moment. I built the latest version (10) myself and added the include and lib files.
+
+In order to use `vcpkg` please follow the instructions here: [https://vcpkg.io/en/getting-started](https://vcpkg.io/en/getting-started)
+
+Then run
+```
+vcpkg install openvdb:x64-windows
+```
+
+This should install all the dependencies OpenVDB requires (e.g., tbb, blosc), even though for the moment I am not using OpenVDB itself from OpenVDB. Hope to figure out the linker errors and change this in the future.
+
 # Dendro
 Dendro is a volumetric modeling plug-in for Grasshopper-3D built on top of the OpenVDB library. It provides multiple ways to wrap points, curves, and meshes as a volumetric data within Grasshopper-3D, allowing you to perform various operations on those volumes. Dendro includes components for boolean, smoothing, offsets, and morphing operations. You can find out more details of its features and download a working version [here](https://www.food4rhino.com/app/dendro)
 
