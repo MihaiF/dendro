@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33927.289
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DendroGH", "DendroGH\DendroGH.csproj", "{A45EBB63-85ED-4B96-BC3A-21221C1DC605}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DendroAPI", "DendroAPI\DendroAPI.vcxproj", "{FBDAB1F6-294A-4978-A8EA-5E4479D86E67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DendroGH", "DendroGH\DendroGH.csproj", "{A45EBB63-85ED-4B96-BC3A-21221C1DC605}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,18 +17,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|x64.Build.0 = Debug|Any CPU
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|x86.Build.0 = Debug|Any CPU
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|x64.ActiveCfg = Release|Any CPU
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|x64.Build.0 = Release|Any CPU
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|x86.ActiveCfg = Release|Any CPU
-		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|x86.Build.0 = Release|Any CPU
 		{FBDAB1F6-294A-4978-A8EA-5E4479D86E67}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{FBDAB1F6-294A-4978-A8EA-5E4479D86E67}.Debug|Any CPU.Build.0 = Debug|x64
 		{FBDAB1F6-294A-4978-A8EA-5E4479D86E67}.Debug|x64.ActiveCfg = Debug|x64
@@ -41,6 +29,18 @@ Global
 		{FBDAB1F6-294A-4978-A8EA-5E4479D86E67}.Release|x64.Build.0 = Release|x64
 		{FBDAB1F6-294A-4978-A8EA-5E4479D86E67}.Release|x86.ActiveCfg = Release|Win32
 		{FBDAB1F6-294A-4978-A8EA-5E4479D86E67}.Release|x86.Build.0 = Release|Win32
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|x64.Build.0 = Debug|Any CPU
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Debug|x86.Build.0 = Debug|Any CPU
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|x64.ActiveCfg = Release|Any CPU
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|x64.Build.0 = Release|Any CPU
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|x86.ActiveCfg = Release|Any CPU
+		{A45EBB63-85ED-4B96-BC3A-21221C1DC605}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
