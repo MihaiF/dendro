@@ -36,6 +36,10 @@ namespace DendroGH {
 
             if (!DA.GetDataList (0, vUnion)) return;
 
+            double smooth = 4.0f;
+            DA.GetData<double>(1, ref smooth);
+            if (!DA.GetData<double>(1, ref smooth)) return;
+
             if (vUnion.Count < 1) {
                 AddRuntimeMessage (GH_RuntimeMessageLevel.Error, "Need to supply a value");
                 return;
@@ -47,7 +51,7 @@ namespace DendroGH {
                 csg = new DendroVolume (vUnion[0]);
             }
             else {
-                csg = vUnion[0].BooleanSmoothUnion (vUnion, 4.0f);
+                csg = vUnion[0].BooleanSmoothUnion(vUnion, (float)smooth);
             }
 
             if (!csg.IsValid) {
